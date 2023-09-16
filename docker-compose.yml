@@ -8,3 +8,13 @@ services:
       - .:/my-close-api
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.34
+    environment:
+      MYSQL_DATABASE: my-closet-db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: ‘yes’
