@@ -5,7 +5,7 @@ services:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/my-close-api
+      - .:/my-closet-api
     ports:
       - "8000:8000"
     depends_on:
@@ -18,3 +18,5 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: ‘yes’
+    ports:
+      - "3306:3306"
