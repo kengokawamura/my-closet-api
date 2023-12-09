@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'my_closet_api.apps.MyClosetApiConfig',
+    'my_closet_api_apps.apps.MyClosetApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'my-closet-api.urls'
+ROOT_URLCONF = 'my_closet_api.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'my-closet-api.wsgi.application'
+WSGI_APPLICATION = 'my_closet_api.wsgi.application'
 
 APPEND_SLASH = False
 
