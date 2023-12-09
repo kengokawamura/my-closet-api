@@ -5,7 +5,7 @@ services:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/my-closet-api
+      - .:/my_closet_api
     ports:
       - "8000:8000"
     depends_on:

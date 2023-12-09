@@ -1,2 +1,2 @@
-# my-closet-api
+# my_closet_api
 manage my clothes
