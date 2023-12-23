@@ -1,19 +1,18 @@
-from django.test import TestCase
-import requests
+from django.test import TestCase, Client
 
-from my_closet_api_apps.views import create_category
-from my_closet_api_apps.models import category
+from my_closet_api_apps.models import Category
 # Create your tests here.
 
 class CreateCategoryTests(TestCase):
     def test_create_category(self):
 
-        self.assertEquals(1, 1)
-
-        # # arrange
-        # expected = 'test category'
-        # requests.body = {'category_name': 'test category'}
-        # # act
-        # create_category(requests)
-        # # assert
-        # self.assertEquals(category.name, expected)
+        # arrange
+        expected = 'test category'
+        body = {"category_name": "test category"}
+        client = Client()
+        # act
+        client.put("/category", data=body, content_type='application/json')
+        qs = Category.objects.values()
+        # assert
+        category = qs[0]
+        self.assertEquals(category['name'], expected)
