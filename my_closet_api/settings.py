@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9$6wzqf@iy^&(ijt7^c(%$ny2aa5&s6(hym*xyg_+30l#a=unr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'my-closet-db',
-        'USER': 'user',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
