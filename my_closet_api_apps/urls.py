@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("category", views.create_category),
+    path("category", views.category),
 ]

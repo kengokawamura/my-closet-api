@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_closet_api_apps.apps.MyClosetApiConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
