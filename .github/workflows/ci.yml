@@ -1,4 +1,10 @@
+on: [push]
 jobs:
   # "my_first_job"というジョブIDでジョブを定義
   test_api:
     name: test api
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was automatically triggered."
+      - run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
+  
