@@ -1,0 +1,4 @@
+jobs:
+  # "my_first_job"というジョブIDでジョブを定義
+  test_api:
+    name: test api
