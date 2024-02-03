@@ -32,4 +32,4 @@ class CreateCategoryTests(TestCase):
         res_body = json.loads(res.content.decode('utf-8'))
         # assert
         self.assertEquals(res.status_code, 200)
-        self.assertEquals(res_body[0]['name'], expected)
+        self.assertEquals(res_body['categories'][0]['name'], expected)

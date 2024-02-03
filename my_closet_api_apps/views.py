@@ -20,4 +20,4 @@ def category(request):
     
         qs = Category.objects.values('id', 'name')
 
-        return HttpResponse(json.dumps(list(qs)), content_type="application/json")
+        return HttpResponse(json.dumps({'categories': list(qs)}), content_type="application/json")
