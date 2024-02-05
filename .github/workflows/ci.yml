@@ -10,7 +10,9 @@ jobs:
         env:  
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
         ports:
-          - 3306:3306
+          - 3307:3306
+        expose:
+          - 3307
     steps:
       - run: echo "The job was automatically triggered."
       - name: Checkout
