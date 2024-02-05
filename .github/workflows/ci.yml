@@ -2,7 +2,6 @@ on: [push]
 jobs:
   # "test_api"というジョブIDでジョブを定義
   test_api:
-    docker-compose:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
