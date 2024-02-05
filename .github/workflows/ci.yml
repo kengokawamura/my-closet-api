@@ -15,6 +15,9 @@ jobs:
       - run: echo "The job was automatically triggered."
       - name: Checkout
         uses: actions/checkout@v4
-      - run: sudo lsof -i -P | grep "LISTEN"
-      - run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
+      -  run: docker-compose up -d
+      -  run: docker-compose ps
+      -  run: docker-compose exec db bash
+      #- run: sudo lsof -i -P | grep "LISTEN"
+      #- run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
   
