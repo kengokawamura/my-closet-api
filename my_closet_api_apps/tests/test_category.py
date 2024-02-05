@@ -11,7 +11,7 @@ class CreateCategoryTests(TestCase):
 
         # arrange
         expected = 'test category'
-        body = {"category_name": "test category"}
+        body = {"category_name": "test categories"}
         client = Client()
         # act
         client.put("/category", data=body, content_type='application/json')
