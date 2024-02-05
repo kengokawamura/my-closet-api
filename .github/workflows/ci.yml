@@ -16,6 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: sudo systemctl start mysql
-      # - run: docker-compose up -d
+      - run: docker-compose ps
       - run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
   
