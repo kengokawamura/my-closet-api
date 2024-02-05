@@ -9,5 +9,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       -  run: docker-compose up -d
-      -  run: docker-compose exec -T web python3 manage.py test my_closet_api_apps/tests/g
+      -  run: docker-compose exec -Tg web python3 manage.py test my_closet_api_apps/tests/
   
