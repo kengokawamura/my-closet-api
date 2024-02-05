@@ -1,23 +1,17 @@
 on: [push]
 jobs:
-  # "my_first_job"というジョブIDでジョブを定義
+  # "test_api"というジョブIDでジョブを定義
   test_api:
-    name: test api
+    docker-compose:
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:8.0.34
-        env:  
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        ports:
-          - 3307:3306
-        expose:
-          - 3307
+    timeout-minutes: 5
+    env:
+      MYSQL_PWD: root
+
     steps:
       - run: echo "The job was automatically triggered."
       - name: Checkout
         uses: actions/checkout@v4
-      - run: docker-compose build
-      - run: docker-compose up -d
+      - run: docker-compose up -d --wait
       - run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
   
