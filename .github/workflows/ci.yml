@@ -20,4 +20,9 @@ jobs:
       - run: echo "The job was automatically triggered."
       - name: Checkout
         uses: actions/checkout@v4
+      - run: |
+          apt-get update && \
+          apt-get -y install mariadb-client
+      - run: ./requirements.txt /requirements.txt
+      - run: pip install -r /requirements.txt
       - run: python3 manage.py test my_closet_api_apps/tests/
