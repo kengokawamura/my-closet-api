@@ -11,5 +11,6 @@ jobs:
         uses: actions/checkout@v4
       - run: docker-compose build
       - run: docker-compose up -d
-      - run: mysql -u root -p -h 127.0.0.1 --port 3306
+      - run: docker ps
+      - run: mysql -u root -p -h 0.0.0.1 --port 3306
       #-  run: docker-compose run web python3 manage.py test my_closet_api_apps/tests/
