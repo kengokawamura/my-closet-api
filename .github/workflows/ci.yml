@@ -8,6 +8,6 @@ jobs:
       - run: echo "The job was automatically triggered."
       - name: Checkout
         uses: actions/checkout@v4
-      -  run: docker-compose up -d
-      -  run: docker-compose exec -T web python3 manage.py test my_closet_api_apps/tests/
-  
+      -  run: docker-compose build web
+      -  run: docker-compose up -d --build
+      -  run: docker-compose exec web /bin/bash -c 'python3 manage.py test ./my_closet_api_apps/tests'
