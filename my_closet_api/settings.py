@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'my_closet_api_apps.apps.MyClosetApiConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +54,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'my_closet_api.urls'
+
+# CORS
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {

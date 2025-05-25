@@ -14,7 +14,7 @@ class CreateCategoryTests(TestCase):
         body = {"category_name": "test category"}
         client = Client()
         # act
-        client.put("/category", data=body, content_type='application/json')
+        client.post("/category", data=body, content_type='application/json')
         qs = Category.objects.values()
         # assert
         category = qs[0]
